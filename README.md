@@ -48,11 +48,11 @@ ALMA-AFC/
 3) Prepare data:
    - Put TEP preprocessed files under `data/tep/`
    - Put FCC preprocessed files under `data/fcc/`
-   - (Raw datasets are not redistributed; see paper/links for sources.)
+   - (Raw datasets are redistributed as zip-archives.)
 4) Run experiments: open `evaluation.ipgynb` and execute all cells.
 5) Inspect/plot results: open `visualization.ipynb` (generates figures and summaries).
 
-Python ≥ 3.9 recommended.
+Python ≥ 3.11 recommended.
 
 ---
 
@@ -66,7 +66,6 @@ Each `results/*_results_*.csv` contains rows with:
 
 Helper utilities in `visualization.ipynb` provide:
 - Aggregated accuracy–vs–distance curves with shared quantile binning + 95% CI
-- Confidence-ellipse summaries (optional)
 - Selection-strategy evaluation (benchmark-only vs alt-only vs AAS/MLOps-guided)
 
 ---
@@ -74,15 +73,8 @@ Helper utilities in `visualization.ipynb` provide:
 ## 🧠 Implemented AFC Baselines
 - **Set-based:** `WDI_1NN`
 - **Sequence-based:** `EAC_1NN`, `MBW_LR`
-- **Series/shape-based:** `ACM_SVM`, `CASIM` (+ `CASIM_arsenal`, `CASIM_multirocket`)
+- **Series/shape-based:** `ACM_SVM`, `CASIM`
 All models share a minimal interface in `classifiers/AFC.py`.
-
----
-
-## 🔧 Extending
-- Add new models under `classifiers/` (follow the `AFCModel` pattern).
-- Add new datasets under `data/<name>/` and update the evaluation notebook.
-- Reuse the provided binning/CI and correlation utilities in `visualization.ipynb`.
 
 ---
 
@@ -95,4 +87,4 @@ See `LICENSE`.
 If you use this repository, please cite:
   Manca, G.; Rezaee Ahvanouee, H.; Faubel-Teich, L.; Kunze, F. C.; and Fay, A.
   “Asset Administration Shell-Based MLOps Framework for Adaptive Alarm Flood Classification.”
-  Submitted to **IFRA World Congress 2026** — *manuscript under review at the time of release*.
+  Submitted to **IFAC World Congress 2026** — *manuscript under review at the time of release*.
